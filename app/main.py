@@ -15,8 +15,7 @@ class Distance:
     def __add__(self, other: Union[Distance, int, float]) -> "Distance":
         if isinstance(other, Distance):
             return Distance(self.km + other.km)
-        else:
-            return Distance(self.km + float(other))
+        return Distance(self.km + float(other))
 
     def __iadd__(self, other: Union[Distance, int, float]) -> "Distance":
         if isinstance(other, Distance):
@@ -33,32 +32,27 @@ class Distance:
         if isinstance(other, (int, float)) and other != 0:
             return Distance(round(self.km / other, 2))
 
-    def __lt__(self, other: Union[Distance, float]) -> bool:
+    def __lt__(self, other: Union[Distance, int, float]) -> bool:
         if isinstance(other, Distance):
             return self.km < other.km
-        else:
-            return self.km < other
+        return self.km < other
 
-    def __gt__(self, other: Union[Distance, float]) -> bool:
+    def __gt__(self, other: Union[Distance, int, float]) -> bool:
         if isinstance(other, Distance):
             return self.km > other.km
-        else:
-            return self.km > other
+        return self.km > other
 
-    def __eq__(self, other: Union[Distance, float]) -> bool:
+    def __eq__(self, other: Union[Distance, int, float]) -> bool:
         if isinstance(other, Distance):
             return self.km == other.km
-        else:
-            return self.km == other
+        return self.km == other
 
-    def __le__(self, other: Union[Distance, float]) -> bool:
+    def __le__(self, other: Union[Distance, int, float]) -> bool:
         if isinstance(other, Distance):
             return self.km <= other.km
-        else:
-            return self.km <= other
+        return self.km <= other
 
-    def __ge__(self, other: Union[Distance, float]) -> bool:
+    def __ge__(self, other: Union[Distance, int, float]) -> bool:
         if isinstance(other, Distance):
             return self.km >= other.km
-        else:
-            return self.km >= other
+        return self.km >= other
